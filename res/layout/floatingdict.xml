@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:layout_width="wrap_content" android:background="#000"
+	android:layout_height="wrap_content">
+	<ViewFlipper android:id="@+id/flipper" android:background="#000"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:inAnimation="@anim/push_left_in" android:outAnimation="@anim/push_left_out"
+		android:flipInterval="2000">
+		<LinearLayout android:orientation="vertical" android:id="@+id/icon" android:layout_gravity="right"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:persistentDrawingCache="animation" android:flipInterval="1000"
+			>
+			<ImageView android:id="@+id/miniImage" android:src="@drawable/translate" 
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				>
+			</ImageView>
+		</LinearLayout>
+		<LinearLayout android:orientation="vertical" android:id="@+id/resultBar" 
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			>
+			<LinearLayout android:orientation="horizontal"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+			
+				<EditText android:text="search" android:id="@+id/key" android:width="130px" android:lines="1"  android:layout_gravity="center_vertical|center_horizontal"
+					android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true"
+					android:gravity="center_vertical|left" android:textColor="#000" android:background="#fff"
+				/>
+				<ImageView  android:id="@+id/translateBtn" android:src="@drawable/search" android:layout_gravity="center_vertical|center_horizontal"
+					android:layout_width="wrap_content" android:layout_height="wrap_content">
+				</ImageView>
+				<ImageView android:id="@+id/showSurfaceImage" android:src="@drawable/finger" android:layout_gravity="center_vertical|center_horizontal"
+					android:layout_width="wrap_content" android:layout_height="wrap_content">
+				</ImageView>
+				<ImageView android:id="@+id/moveImage" android:src="@drawable/move" android:layout_gravity="center_vertical|center_horizontal"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:gravity="center_vertical|right"
+					>
+				</ImageView>
+			</LinearLayout>
+			<LinearLayout android:orientation="horizontal"
+				android:layout_width="wrap_content" android:layout_height="wrap_content">
+				<TextView android:id="@+id/result" android:text=""  android:background="@drawable/tab"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:scrollbars="horizontal|vertical" android:scrollHorizontally="true"
+					android:clickable="true" style="@drawable/setting_bottom_bg"
+					>
+					
+				</TextView>
+			</LinearLayout>
+			
+		</LinearLayout>
+	</ViewFlipper>
+	<SurfaceView android:layout_width="fill_parent"  android:layout_height="fill_parent"
+		android:visibility="invisible" android:id="@+id/surfaceView"
+		android:background="#fff"
+	>
+	
+	</SurfaceView>
+</RelativeLayout>
